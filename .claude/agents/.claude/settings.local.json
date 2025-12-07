@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "fetch"
+  ],
+  "enableAllProjectMcpServers": true
+}
