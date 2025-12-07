@@ -28,8 +28,12 @@ The system runs on a scheduled cron job that executes `run_task.sh`, which trigg
   - `package.json` - Node.js dependencies
 
 ## Usage
-### Installing
-install Claude code, nodejs(lts version is fine), npm
+### Init
+1. Install Claude code, nodejs(lts version is fine), npm
+2. Add exec permission
+```bash
+chmod +x ./run_task.sh
+```
 
 ### Updating Configuration
 get your resend api key here:https://resend.com/api-keys

@@ -1,9 +1,12 @@
 import { Resend } from 'resend';
 import minimist from 'minimist';
 import dotenv from 'dotenv';
+import path from 'path';
 
 // Load environment variables from .env.local file
-dotenv.config({ path: '.env.local' });
+// Use script directory (parent of build directory)
+const envPath = path.join(path.dirname(path.dirname(process.argv[1])), '.env.local');
+dotenv.config({ path: envPath });
 
 // Parse command line arguments
 const argv = minimist(process.argv.slice(2));
