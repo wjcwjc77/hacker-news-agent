@@ -24,10 +24,11 @@
 
 ## 第三步：发送邮件
 
-使用 Node.js 直接调用 build/index.js 发送邮件：
+使用 Node.js 直接调用$CURRENT_DIR/send-email/build/index.js 发送邮件：
 
 ```bash
-node send-email/build/index.js \
+node "$CURRENT_DIR/send-email/build/index.js" \
   --data '{"date":"YYYY-MM-DD HH:00","topics":[...]}'
 ```
+
 

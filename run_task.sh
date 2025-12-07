@@ -4,10 +4,13 @@
 
 set -e
 
+# Get the absolute path of the current directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Set PATH to include NVM paths for cron environment
 export PATH="/root/.nvm/versions/node/v24.11.1/bin:$PATH"
 
-LOG_FILE="/root/hn/task.log"
+LOG_FILE="$SCRIPT_DIR/task.log"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
 log() {
@@ -21,6 +24,5 @@ log "Processing with Claude AI..."
 CURRENT_HOUR=$(date '+%Y-%m-%d %H:00')
 
 # Execute claude with enhanced prompt including current hour
-cat /root/hn/task_prompt.md  | claude -p "Execute the task described in the prompt file. The current date/time is ${CURRENT_HOUR}."
-
+cat "$SCRIPT_DIR/task_prompt.md" | sed "s|\$CURRENT_DIR|$SCRIPT_DIR|g" | claude -p "Execute the task described in the prompt file. The current date/time is ${CURRENT_HOUR}."
 log "Task completed successfully"
