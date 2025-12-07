@@ -20,9 +20,7 @@ log() {
 # Execute the claude command with the prompt
 log "Processing with Claude AI..."
 
-# Set the current hour for the task
-CURRENT_HOUR=$(date '+%Y-%m-%d %H:00')
 
 # Execute claude with enhanced prompt including current hour
-cat "$SCRIPT_DIR/task_prompt.md" | sed "s|\$CURRENT_DIR|$SCRIPT_DIR|g" | claude -p "Execute the task described in the prompt file. The current date/time is ${CURRENT_HOUR}."
+cat "$SCRIPT_DIR/task_prompt.md" | sed "s|\$CURRENT_DIR|$SCRIPT_DIR|g" | claude -p "Execute the task described in the prompt file directly." --debug
 log "Task completed successfully"
