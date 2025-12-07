@@ -1,7 +1,9 @@
-# AI Topics Summary Service
+# Hacker news Agent
 
 ## Overview
 This service fetches AI-related topics from various sources every 2 hours and sends a formatted summary email. The system uses `claude code` to gather, analyze, and format content into a visually appealing HTML email.
+
+![Hacker News Email](hacker-news-email.png)
 
 ## How It Works
 

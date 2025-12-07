@@ -80,14 +80,14 @@ function generateHTML(data: any): string {
 </head>
 <body>
     <div class="header">
-        <h1>AI Topics Summary</h1>
+        <h1>Hacker News</h1>
         <p style="margin: 10px 0 0 0; font-size: 18px;">${escapeHtml(date)}</p>
     </div>
     <div class="content">
         ${topicHTMLs}
     </div>
     <div class="footer">
-        <p>🤖 AI Topics 自动推送 | 每日更新</p>
+        <p>🤖hacker-news agent自动推送 | 小时级更新</p>
     </div>
 </body>
 </html>`;
