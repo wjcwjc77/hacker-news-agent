@@ -29,4 +29,7 @@ build/
 send-email/build/
 send-email/node_modules/
 send-email/package-lock.json
+
+# Ignore all JSON files except .mcp.json
 *.json
+!.mcp.json
