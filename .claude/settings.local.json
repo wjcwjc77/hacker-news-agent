@@ -1,11 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "mcp__fetch__fetch",
-      "mcp__resend__send-email",
-      "Bash(datem-%d:*)",
-      "Bash(node:*)"
-    ]
+      "mcp__fetch__fetch"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode":"acceptEdits"
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
