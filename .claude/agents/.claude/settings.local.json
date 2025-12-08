@@ -1,4 +1,10 @@
-{
+{ 
+  "permissions": {
+    "allow": [
+      "mcp__fetch__fetch"
+     
+    ]
+  },
   "enabledMcpjsonServers": [
     "fetch"
   ],
