@@ -45,13 +45,8 @@ nano send-email/.env.local
 # Rebuild the Node.js service after changes
 cd send-email && npm install  && npm run build
 ```
-### Editing Schedule
+### Run
 ```bash
-# Edit crontab
-crontab -e
-
-# Example: Run every 2 hours
-# 0 */2 * * * /your absolute path/run_task.sh >> /your absolute path/cron.log 2>&1
+./run_task.sh
 ```
-
 

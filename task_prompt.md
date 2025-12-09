@@ -8,7 +8,7 @@
 
 向 fetch agent 发送AI Topics获取任务，包含以下信息：
 - 需要抓取的网站：https://hn.buzzing.cc/
-- 筛选规则：选择最近2小时内发布的AI相关话题，优先级为科技巨头、有趣内容、产品发布
+- 筛选规则：尽量选择选择最近发布的话题（一般为排序靠前的几个话题和网站），优先级依次为猎奇，科技巨头、有趣内容、产品发布
 - **TIMESTAMP参数**：YYYYMMDD_HH（具体到小时）
 - 输出JSON格式：
 ```json
@@ -26,3 +26,4 @@
 ```
 
 Fetch agent 将把结果保存到 `/root/hn/fetch_output_${TIMESTAMP}.json` 文件中。
+除上述外，不要做任何的操作和内容。
