@@ -1,7 +1,7 @@
 # Hacker news Agent
 
 ## Overview
-This service fetches AI-related topics from various sources every 2 hours and sends a formatted summary email. The system uses `claude code` to gather, analyze, and format content into a visually appealing HTML email.
+This service fetches AI-related topics from various sources hourly and sends a formatted summary email. The system uses `claude code` to gather, analyze, and format content into a visually appealing HTML email.
 
 ![Hacker News Email](hacker-news-email.png)
 
@@ -29,7 +29,7 @@ The system runs on a scheduled cron job that executes `run_task.sh`, which trigg
 
 ## Usage
 ### Init
-1. Install Claude code, nodejs(lts version is fine), npm
+1. Install Claude code, nodejs(lts version is fine), npm, uv
 2. Add exec permission
 ```bash
 chmod +x ./run_task.sh

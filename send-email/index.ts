@@ -18,7 +18,7 @@ const apiKey = argv.key || process.env.RESEND_API_KEY;
 const senderEmailAddress = argv.sender || process.env.SENDER_EMAIL_ADDRESS || 'onboarding@resend.dev';
 
 // Get recipient email from command line argument or use default
-const recipientEmail = argv.to || process.env.RECIPIENT_EMAIL_ADDRESS || '3093234787w@gmail.com';
+const recipientEmail = argv.to || process.env.RECIPIENT_EMAIL_ADDRESS;
 
 // Get JSON data from command line argument
 const jsonData = argv.data;

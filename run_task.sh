@@ -57,8 +57,8 @@ while true; do
       --data "$(cat "$OUTPUT_FILE")"
 
     log "Task completed successfully"
-    log "Sleeping for 1 hour before next iteration..."
+    log "Sleeping for 4 hour before next iteration..."
 
-    # Sleep for 1 hour (3600 seconds)
-    sleep 3600
+    # Sleep for 4 hour (14400 seconds)
+    sleep 14400
 done
