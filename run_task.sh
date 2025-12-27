@@ -56,6 +56,9 @@ while true; do
     node "$SCRIPT_DIR/send-email/build/index.js" \
       --data "$(cat "$OUTPUT_FILE")"
 
+    # Clean up the output file after successful processing
+    rm -f "$OUTPUT_FILE"
+
     log "Task completed successfully"
     log "Sleeping for 4 hour before next iteration..."
 

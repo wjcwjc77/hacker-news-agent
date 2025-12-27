@@ -32,12 +32,22 @@ if (!apiKey) {
 
 const resend = new Resend(apiKey);
 
+async function sendErrEmail(errorMessage:any){
+    await resend.emails.send({
+    from: senderEmailAddress,
+    to: recipientEmail,
+    subject: "Hacker News Failed",
+    text: `${errorMessage}`
+  });
+}
 // Parse JSON data
 let data;
 try {
   data = JSON.parse(jsonData);
 } catch (error) {
   console.error('Failed to parse JSON data:', error);
+  const errorMessage = error instanceof Error ? error.message : String(error);
+  await sendErrEmail(errorMessage)
   process.exit(1);
 }
 
@@ -105,11 +115,11 @@ function generateText(data: any): string {
     return `${index + 1}. ${title}\n   ${summary}\n   ${url}`;
   }).join('\n\n');
 
-  return `AI Topics Summary - ${date}
+  return `Hacker news Summary - ${date}
 
 ${topicTexts}
 
-🤖 AI Topics 自动推送 | 每日更新`;
+🤖Hacker news agent自动推送 | 小时更新`;
 }
 
 // Escape HTML special characters
@@ -127,7 +137,7 @@ function escapeHtml(text: string): string {
 // Generate email content
 const htmlContent = generateHTML(data);
 const textContent = generateText(data);
-const subject = `AI Topics Summary - ${data.date}`;
+const subject = `Hacker news Summary - ${data.date}`;
 
 // Send email
 async function sendEmail() {
@@ -142,6 +152,8 @@ async function sendEmail() {
 
     if (response.error) {
       console.error('Email failed to send:', JSON.stringify(response.error));
+      const errorMessage = response.error instanceof Error ? response.error.message : String(response.error);
+      await sendErrEmail(errorMessage)
       process.exit(1);
     }
 
@@ -149,6 +161,8 @@ async function sendEmail() {
     console.log('Email ID:', response.data?.id);
   } catch (error) {
     console.error('Error sending email:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    await sendErrEmail(errorMessage)
     process.exit(1);
   }
 }
