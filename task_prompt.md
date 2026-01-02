@@ -8,8 +8,8 @@
 ## 第一步：调用 Fetch Sub Agent
 
 向 fetch agent 发送AI Topics获取任务，包含以下信息：
-- 需要抓取的网站：https://hn.buzzing.cc/ & https://dev.buzzing.cc/
-- 筛选规则：选择最近发布的话题（排序前20的话题和网站），优先级依次为猎奇，科技巨头、有趣内容、产品发布
+- 需要抓取的网站：https://hn.buzzing.cc/ & https://dev.buzzing.cc/ & https://ph.buzzing.cc/
+- 筛选规则：选择最近发布的话题（排序前20的话题和网站），优先级依次为猎奇，科技巨头、有趣内容、产品发布。每个网站挑选不少于10个话题，尽量选择排名靠前的话题。
 - **TIMESTAMP参数**：YYYYMMDD_HH（具体到小时）
 - 输出JSON格式：
 ```json

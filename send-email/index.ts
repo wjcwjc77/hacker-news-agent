@@ -48,7 +48,7 @@ try {
   console.error('Failed to parse JSON data:', error);
   const errorMessage = error instanceof Error ? error.message : String(error);
   await sendErrEmail(errorMessage)
-  process.exit(1);
+  console.log('程序继续运行，等待下一次执行...');
 }
 
 // Generate HTML email content
@@ -154,7 +154,7 @@ async function sendEmail() {
       console.error('Email failed to send:', JSON.stringify(response.error));
       const errorMessage = response.error instanceof Error ? response.error.message : String(response.error);
       await sendErrEmail(errorMessage)
-      process.exit(1);
+      console.log('邮件发送失败，程序继续运行，等待下一次执行...');
     }
 
     console.log('Email sent successfully!');
@@ -163,7 +163,7 @@ async function sendEmail() {
     console.error('Error sending email:', error);
     const errorMessage = error instanceof Error ? error.message : String(error);
     await sendErrEmail(errorMessage)
-    process.exit(1);
+    console.log('邮件发送失败，程序继续运行，等待下一次执行...');
   }
 }
 
